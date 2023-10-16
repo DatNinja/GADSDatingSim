@@ -10,11 +10,14 @@ public class DialogManager : MonoBehaviour
     public GameObject nameBoxTwo;
     public GameObject OrphanageExterior;
     public GameObject OrphanageInteriror;
+    public GameObject CourtExterior;
+    public GameObject CourtMainDesk;
     public GameObject CourtRoom;
     public GameObject Fade;
     public GameObject John;
     public GameObject Angela;
     public GameObject Judge;
+    public GameObject Secretary;
     [SerializeField] TextMeshProUGUI Dialog;
     [SerializeField] TextMeshProUGUI nameOne;
     [SerializeField] TextMeshProUGUI nameTwo;
@@ -54,11 +57,11 @@ public class DialogManager : MonoBehaviour
                 case 5:
                     Dialog.text = "This is it, John. Just take a deep breath and go for it";
                     John.SetActive(true);
+                    nameBoxOne.SetActive(true);
                     break;
 
                 case 6:
-                    Dialog.text = "Hi, I'm John. My husband Sam and I heard wonderful things about this place and wanted to know more about adopting a child";
-                    nameBoxOne.SetActive(true);
+                    Dialog.text = "Hi, I'm John. My husband Sam and I heard wonderful things about this place and wanted to know more about adopting a child";                    
                     break;
 
                 case 7:
@@ -232,6 +235,100 @@ public class DialogManager : MonoBehaviour
 
                 case 42:
                     Dialog.text = "[Sam is not so optimistic]";
+                    break;
+
+                case 43:
+                    Dialog.text = "[Over the next few days you and Sam fill out the paper work and send it off to the childrens court of approval]";
+                    break;
+
+                case 44:
+                    Dialog.text = "[Weeks go by without a response]";
+                    break;
+
+                case 45:
+                    Dialog.text = "[Sam gets more and more dispondent each day]";
+                    break;
+
+                case 46:
+                    Dialog.text = "[Until finally you get a call from the court asking you to come in]";
+                    break;
+
+                case 47:
+                    Dialog.text = "This is it, the next step in the process. I need to stay focused and make sure everything is in order";
+                    Fade.SetActive(false);
+                    CourtExterior.SetActive(true);
+                    John.SetActive(true);
+                    nameBoxOne.SetActive(true);
+                    break;
+
+                case 48:
+                    Dialog.text = "[You head inside the court house and approach the woman at the main desk]";
+                    CourtExterior.SetActive(false);
+                    CourtMainDesk.SetActive(true);
+                    nameBoxOne.SetActive(false);
+                    break;
+
+                case 49:
+                    Dialog.text = "Good afternoon, sir. How can I assist you today?";
+                    Secretary.SetActive(true);
+                    nameBoxTwo.SetActive(true);
+                    nameTwo.text = "Court Clerk";
+                    break;
+
+                case 50:
+                    Dialog.text = "Hi, I'm John, and I'm here to finalize my adoption report. I have all the necessary documents right here";
+                    nameBoxOne.SetActive(true);
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 51:
+                    Dialog.text = "Thank you, John. I'll just need a moment to review these";
+                    nameBoxOne.SetActive(false);
+                    nameBoxTwo.SetActive(true);
+                    break;
+
+                case 52:
+                    Dialog.text = "[You watch as the clerk goes through all the documents]";
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 53:
+                    Dialog.text = "[You watch as the clerk goes through all the documents]";
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 54:
+                    Dialog.text = "It's crucial that everything is in order. We've come so far, and this means the world to us.";
+                    nameBoxOne.SetActive(true);
+                    break;
+
+                case 55:
+                    Dialog.text = "[The woman looks back up at you and hands you back the documents as well as a slip with a room number on it]";
+                    nameBoxOne.SetActive(false);
+                    break;
+
+                case 56:
+                    Dialog.text = "Everything seems to be in order, John. You can proceed to the assigned courtroom";
+                    nameBoxTwo.SetActive(true);
+                    break;
+
+                case 57:
+                    Dialog.text = "Thank you. I hope everything goes smoothly. This is the final step, and we're so close to becoming parents";
+                    nameBoxOne.SetActive(true);
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 58:
+                    Dialog.text = "[You make your way down down the halls of the court until you find the correct room]";
+                    Fade.SetActive(true);
+                    CourtMainDesk.SetActive(false);
+                    John.SetActive(false);
+                    Secretary.SetActive(false);
+                    nameBoxOne.SetActive(false);
+                    break;
+
+                case 59:
+                    Dialog.text = "[As you entire the room you are met by a well dressed man sitting behind a desk]";
                     break;
             }
         }
