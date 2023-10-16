@@ -6,6 +6,7 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
+    public GameObject DialogBox;
     public GameObject nameBoxOne;
     public GameObject nameBoxTwo;
     public GameObject OrphanageExterior;
@@ -18,9 +19,14 @@ public class DialogManager : MonoBehaviour
     public GameObject Angela;
     public GameObject Judge;
     public GameObject Secretary;
+
+    public GameObject EndText;
+    public GameObject ReturnButton;
+
     [SerializeField] TextMeshProUGUI Dialog;
     [SerializeField] TextMeshProUGUI nameOne;
     [SerializeField] TextMeshProUGUI nameTwo;
+
     int dialogPage = 0;
 
     void Start()
@@ -322,7 +328,120 @@ public class DialogManager : MonoBehaviour
                     break;
 
                 case 57:
-                    Dialog.text = "[As you entire the room you are met by a well dressed man sitting behind a desk]";
+                    Dialog.text = "You must be John, please take a seat";
+                    Fade.SetActive(false);
+                    CourtRoom.SetActive(true);
+                    John.SetActive(true);
+                    Judge.SetActive(true);
+                    nameBoxTwo.SetActive(true);
+                    nameTwo.text = "Judge";
+                    break;
+
+                case 58:
+                    Dialog.text = "[You nervously take a seat at the desk in front of the Judge]";
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 59:
+                    Dialog.text = "So John, you are here today to finalize the adoption of a child";
+                    nameBoxTwo.SetActive(true);
+                    break;
+
+                case 60:
+                    Dialog.text = "I've reviewed your case and the necessary documentation";
+                    break;
+
+                case 61:
+                    Dialog.text = "I trust that you understand the gravity of this commitment?";
+                    break;
+
+                case 62:
+                    Dialog.text = "I trust that you understand the gravity of this commitment?";
+                    break;
+
+                case 63:
+                    Dialog.text = "Yes, Your Honor. Sam and I are fully committed to providing a loving and stable home for a child";
+                    nameBoxOne.SetActive(true);
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 64:
+                    Dialog.text = "Very well. Before we proceed, do you have any statements or information you'd like to add to your report?";
+                    nameBoxOne.SetActive(false);
+                    nameBoxTwo.SetActive(true);
+                    break;
+
+                case 65:
+                    Dialog.text = "Your Honor, I want to emphasize our commitment to this child's well-being. We're prepared to provide all the love and support they need to thrive";
+                    nameBoxOne.SetActive(true);
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 66:
+                    Dialog.text = "Thank you for your statement. I have acknowledged your sincerity";
+                    nameBoxOne.SetActive(false);
+                    nameBoxTwo.SetActive(true);
+                    break;
+
+                case 67:
+                    Dialog.text = "Let us proceed with the formalities";
+                    break;
+
+                case 68:
+                    Dialog.text = "Let us proceed with the formalities";
+                    break;
+
+                case 69:
+                    Dialog.text = "[You watch as the Judge jots down and signs several documents on the desk in front of him]";
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 70:
+                    Dialog.text = "There's one more thing we must address before we're done here";
+                    nameBoxTwo.SetActive(true);
+                    break;
+
+                case 71:
+                    Dialog.text = "I assume your aware that this case has raised concerns among some individuals with in orphanage?";
+                    break;
+
+                case 72:
+                    Dialog.text = "How do you respond to these concerns regarding the suitability of your relationship?";
+                    break;
+
+                case 73:
+                    Dialog.text = "Your Honor, while I understand that some may hold reservations, I firmly believe that love knows no boundaries";
+                    nameBoxOne.SetActive(true);
+                    nameBoxTwo.SetActive(false);
+                    break;
+
+                case 74:
+                    Dialog.text = "Sam and I are committed to proving that we can provide a loving and stable home for a child, just like any other couple";
+                    break;
+
+                case 75:
+                    Dialog.text = "[The Judge takes a second to think before writing something down on the document in front of him]";
+                    nameBoxOne.SetActive(false);
+                    break;
+
+                case 76:
+                    Dialog.text = "Very well, Mr. John. I will take your statements into consideration as we make my final decision";
+                    nameBoxTwo.SetActive(true);
+                    break;
+
+                case 77:
+                    Dialog.text = "Thank you, Your Honor. We appreciate your time and consideration";
+                    nameBoxTwo.SetActive(true);
+                    break;
+
+                case 78:
+                    DialogBox.SetActive(false);
+                    John.SetActive(false);
+                    Judge.SetActive(false);
+                    nameBoxTwo.SetActive(false);
+                    Fade.SetActive(true);
+                    EndText.SetActive(true);
+                    ReturnButton.SetActive(true);
                     break;
             }
         }
